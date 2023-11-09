@@ -7,10 +7,9 @@
 
 <body>
     <h1>Nahostkonflikt</h1>
+    <h1 style="color: #000; margin: 0; padding: 0; top: 40; left: -2; position: absolute; z-index: -1;">Nahostkonflikt</h1>
 
     <div style="height: 600px;"></div>
-    
-    
 
     <div class="arrow-down">
         <div class="left"></div>
@@ -223,10 +222,7 @@
             </div>
         </div>
 
-
     </div>
-
-
 
     <div class="footer">
         <a href="html/impressum.html" id="impressum">Impressum</a>
@@ -262,9 +258,10 @@
         // Background blur
         const backgroundImageElement = document.querySelector(".background-img");
         const arrowDownElement = document.querySelector(".arrow-down");
+        const arrowDownLeft = document.querySelector(".left");
+        const arrowDownRight = document.querySelector(".right");
         document.addEventListener("scroll", (event) => { 
 
-        arrowDownElement.style.display = "none"
 
         console.log("page Y: ", pageYOffset);
         console.log("background Style:\n", backgroundImageElement.style);
@@ -275,11 +272,20 @@
         if (pageYOffset > maxScrolDistance-1) {
             backgroundImageElement.style.filter = imagefilter + `blur(80px)`;
         }
-        else if (pageYOffset < 0) {
+        else if (pageYOffset < 1) {
             backgroundImageElement.style.filter = imagefilter + `blur(0px)`;
         }
         else {
             backgroundImageElement.style.filter = imagefilter + `blur(${Math.floor(maxBlurInPx - (maxBlurInPx-(pageYOffset/maxScrolDistance*maxBlurInPx)))}px)`;
+        }
+
+        if (pageYOffset < 150) {
+            arrowDownElement.style.display = "flex";
+            arrowDownLeft.style.background = `rgba(0, 0, 0, ${Math.floor(50 - (pageYOffset/150*50))}%)`;
+            arrowDownRight.style.background = `rgba(0, 0, 0, ${Math.floor(50 - (pageYOffset/150*50))}%)`;
+        }
+        else {
+            arrowDownElement.style.display = "none";
         }
 
         console.log("page Y: ", pageYOffset);
