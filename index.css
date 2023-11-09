@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-items: center;
+    scroll-behavior: smooth;
 }
 
 body h1 {
@@ -18,7 +19,6 @@ body h1 {
     width: 100%;
     padding: 0.3rem;
     margin-top: 2rem;
-    color: #fff;
 }
 
 .timeline {
@@ -155,6 +155,7 @@ body h1 {
     z-index: -2;
     min-width: 1400px;
     filter: blur(0px);
+    filter: saturate(20%);
     animation: blurbackground 1.5s ease-in forwards;
 
     align-self: center;
@@ -193,7 +194,77 @@ body h1 {
     color: white;
 }
 
-
+.arrow-down{
+    z-index: 20;
+    width:60px;
+    height:40px;
+    margin:0 0 0 0;
+    position:absolute;
+    left: calc(50% - 5px);
+    bottom:0px;
+    -webkit-animation: arrow 0.5s 1s infinite ease-out alternate;
+    scale: 170%;
+    
+  }
+  
+  .arrow-down:hover{
+     -webkit-animation-play-state: paused;
+  }
+  
+  .left{
+    position:absolute;
+    height:10px;
+    width:40px;
+    background:black;
+    -webkit-transform:rotate(240deg);
+    top:10px;
+    left:10px;
+    -webkit-border-radius:4px;
+    -webkit-transform-origin:5px 50%;
+    -webkit-animation: leftArrow 0.5s 1s infinite ease-out alternate;
+  }
+  
+  .right{
+    position:absolute;
+    height:10px;
+    width:40px;
+    background:black;
+    -webkit-transform:rotate(-60deg);
+    top:10px;
+    left:10px;
+    -webkit-border-radius:4px;
+    -webkit-transform-origin:5px 50%;
+    -webkit-animation: rightArrow 0.5s 1s infinite ease-out alternate;
+  }
+  
+  
+  
+  
+  @-webkit-keyframes arrow{
+    0% {
+      bottom:0px;
+    }
+    100%{
+      bottom:40px;
+    }
+  }
+  
+  
+  @-webkit-keyframes leftArrow{
+    0% {
+    }
+    100%{
+      -webkit-transform:rotate(225deg);
+    }
+  }
+  
+  @-webkit-keyframes rightArrow{
+    0% {
+    }
+    100%{
+      -webkit-transform:rotate(-45deg);
+    }
+  }
 
 
 @media screen and (max-width: 600px) {
