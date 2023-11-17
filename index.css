@@ -139,40 +139,36 @@ body h1 {
     left: -15px;
 }
 
-.container-content-img {
+.background {
+    position: fixed;
+    display: flex;
+    top: -90px;
     width: 100%;
-    position: relative;
-    padding: 5px;
-    padding-top: 1rem;
-
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    z-index: -30;
+    background-color: red;
+    background-repeat: repeat-y;
+    align-items: center;
 }
+
+.image-blur-load {
+    position: inherit;
+    filter: blur(10px) saturate(20%);
+    z-index: -1;
+    width: 100%;
+    max-width: 1200px;
+}
+
 
 .background-img {
-    position:fixed;
-    top: -200;
-    margin: 0;
-    padding: 0;
-    width: 65%;
-    z-index: -2;
-    min-width: 1400px;
-    filter: blur(0px);
-    filter: saturate(20%);
-    animation: blurbackground 1.5s ease-in forwards;
-
-    align-self: center;
-    justify-self: center;
+    position: inherit;
+    filter: blur(0px) saturate(20%);
+    z-index: 0;
+    width: 100%;
+    max-width: 1200px;
 }
-/* .background-img-blur {
-    filter: blur(80px);
-} */
-/* @keyframes blurbackground {
-    0% {
-        filter:blur(0px)
-    }
-    100% {
-        filter:blur(60px)
-    }
-} */
 
 .footer {
     width: 100%;
@@ -265,6 +261,59 @@ body h1 {
     }
   }
 
+.intoText {
+    color: #fff;
+    max-width: 1000px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    align-self: center;
+    hyphens: auto; 
+	text-align: justify;
+    margin-top: 6.5rem;
+    margin-right: 0rem;
+    margin: 6.5rem 2rem;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.text-box__content {
+    hyphens: auto;
+    text-align: justify;
+}
+
+.background-img {
+    opacity: 0%;
+    transition: opacity 200ms ease-in-out;
+}
+
+.background-img.loaded {
+    opacity: 100%;
+}
+
+.blur-div {
+    background-size: cover;
+    background-position: center;
+}
+
+.container-content-img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    opacity: 0%;
+}
+
+.container-content-img.loaded {
+    opacity: 100%;
+    transition: opacity 200ms ease-in-out;
+}
+
+
+@media screen and (max-width: 700px) {
+    .background{
+        top: -45px;
+    }
+}
 
 @media screen and (max-width: 600px) {
     .timeline {
@@ -303,9 +352,5 @@ body h1 {
     .footer {
         flex-direction: column;
         align-items: center;
-    }
-    .background-img {
-        top: -550px;
-        scale: 50%;
     }
 }
