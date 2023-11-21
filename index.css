@@ -267,19 +267,30 @@ body h1 {
   }
 
 .intoText {
-    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     max-width: 1000px;
-    font-size: 1.3rem;
-    font-weight: bold;
     align-self: center;
     hyphens: auto; 
 	text-align: justify;
-    margin-top: 6.5rem;
-    margin-right: 0rem;
-    margin: 6.5rem 2rem;
-    padding: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+
+}
+.intoText > div {
+    color: #fff;
+    margin: 0.3rem;
+    padding: 0.7rem 1.2rem;
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+}
+
+.intoText > div > h2 {
+    display: flex;
+    text-align: left;
+}
+
+.intoText > div > p {
 }
 
 .text-box__content {
@@ -382,5 +393,19 @@ body h1 {
     .footer {
         flex-direction: column;
         align-items: center;
+    }
+    .introText-element {
+        max-width: 100%;
+        min-width: 90%;
+        width: 100%;
+        margin: 2rem;
+    }
+
+    .introText-element > h2 {
+        
+    }
+
+    .introText-element > p {
+        font-size: 0.8rem;
     }
 }
