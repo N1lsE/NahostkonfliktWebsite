@@ -10,9 +10,12 @@
         <img src="assets/background-small.JPG" alt="" class="image-blur-load">
         <img src="assets/IMG_0288.JPG" alt="" class="background-img">
     </div>
+    <div class="headline">
+        <h1>Nahostkonflikt</h1>
+        <h1 style="color: #000; margin: 0; padding: 0; top: 40; left: -2; position: absolute; z-index: -1;">Nahostkonflikt</h1>
+    </div>
 
-    <h1>Nahostkonflikt</h1>
-    <h1 style="color: #000; margin: 0; padding: 0; top: 40; left: -2; position: absolute; z-index: -1;">Nahostkonflikt</h1>
+    <button class="jump-back-top-btn" onclick="jumpToTop()">^</button>
 
     
 
@@ -275,7 +278,9 @@
                 <p class="text-box__content">US-Präsident Donald Trump verkündet den Umzug der US-Botschaft von Tel Aviv nach
                     Jerusalem. Die Entscheidung stößt international auf heftige Kritik.</p>
                 <span class="left-container__arrow"></span>
-                <!-- <img class="container-content-img" src="img" alt="" loading="lazy"> -->
+                <div class="blur-div" style="background-image: url(assets/images/resized/US-Botschaft-in-Israel.png);">
+                    <img class="container-content-img" src="assets/images/US-Botschaft-in-Israel.png" alt="" loading="lazy">
+                </div>
             </div>
         </div>
 
@@ -288,7 +293,9 @@
                     Demonstrationen von Palästinensern für das Recht auf Rückkehr ins Gebiet des heutigen Israels.
                     Mehr als 100 werden von der Armee erschossen. Die USA eröffnen ihre Botschaft in Jerusalem.</p>
                 <span class="right-container__arrow"></span>
-                <!-- <img class="container-content-img" src="img" alt="" loading="lazy"> -->
+                <div class="blur-div" style="background-image: url(assets/images/resized/Demos-an-der-Gazagrenze.png);">
+                    <img class="container-content-img" src="assets/images/Demos-an-der-Gazagrenze.png" alt="" loading="lazy">
+                </div>
             </div>
         </div>
 
@@ -346,7 +353,9 @@
                     Militärs ein heftiges Feuergefecht mit Dutzenden militanten Palästinensern während einer Razzia in
                     der Stadt Dschenin gegeben. Bei der Beerdigung kommt es zu gewalttätigen Auseinandersetzungen.</p>
                 <span class="right-container__arrow"></span>
-                <img class="container-content-img" src="assets/images/Grab-Shireen_Abu_Akleh.png" alt="" loading="lazy">
+                <div class="blur-div" style="background-image: url(assets/images/resized/Grab-Shireen_Abu_Akleh.png);">
+                    <img class="container-content-img" src="assets/images/Grab-Shireen_Abu_Akleh.png" alt="" loading="lazy">
+                </div>
             </div>
         </div>
 
@@ -549,6 +558,7 @@
         const arrowDownElement = document.querySelector(".arrow-down");
         const arrowDownLeft = document.querySelector(".left");
         const arrowDownRight = document.querySelector(".right");
+        const jumpBackTopBtn = document.querySelector(".jump-back-top-btn");
         document.addEventListener("scroll", (event) => { 
 
 
@@ -558,6 +568,7 @@
         var maxBlurInPx = 80;
         var maxScrolDistance = 700
         var imagefilter = "saturate(20%) ";
+        var deadZoneInPX = 200;
         if (pageYOffset > maxScrolDistance-1) {
             backgroundImageElement.style.filter = imagefilter + `blur(80px)`;
         }
@@ -565,7 +576,7 @@
             backgroundImageElement.style.filter = imagefilter + `blur(0px)`;
         }
         else {
-            backgroundImageElement.style.filter = imagefilter + `blur(${Math.floor(maxBlurInPx - (maxBlurInPx-(pageYOffset/maxScrolDistance*maxBlurInPx)))}px)`;
+            backgroundImageElement.style.filter = imagefilter + `blur(${Math.floor(maxBlurInPx - (maxBlurInPx-((pageYOffset-deadZoneInPX)/maxScrolDistance*maxBlurInPx)))}px)`;
         }
 
         if (pageYOffset < 150) {
@@ -575,6 +586,13 @@
         }
         else {
             arrowDownElement.style.display = "none";
+        }
+
+        if (pageYOffset < 360) {
+            jumpBackTopBtn.style.visibility='hidden';
+        }
+        else {
+            jumpBackTopBtn.style.visibility='visible';
         }
 
 
@@ -622,5 +640,11 @@
     });
     </script>
       
+      <!-- Jump to Top Button -->
+      <script>
+        function jumpToTop() {
+            scroll(0, 0)
+        }
+      </script>
 </body>
 </html>
