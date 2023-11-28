@@ -330,7 +330,7 @@ body h1 {
 .jump-back-top-btn {
     color: #fff;
     background-color: gray;
-    border-color: #2e364a;
+    border-color: #fff;
     border-width: 2px;
 
     aspect-ratio: 1/1;
@@ -428,4 +428,12 @@ body h1 {
         display: flex;
         text-align: left;
     }
+
+    .jump-back-top-btn {
+        position: sticky;
+        left: 0.4rem;
+        top: calc(calc(100% - 3rem - 1rem));
+        
+    }
+
 }
