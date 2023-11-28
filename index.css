@@ -266,7 +266,7 @@ body h1 {
     }
   }
 
-.intoText {
+.introText {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -277,20 +277,22 @@ body h1 {
     justify-content: space-around;
 
 }
-.intoText > div {
+.introText > div {
     color: #fff;
-    margin: 0.3rem;
+    margin: 0.8rem 0.3rem;
     padding: 0.7rem 1.2rem;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
 
-.intoText > div > h2 {
+.introText > div > h2 {
     display: flex;
     text-align: left;
+    font-size: 1.5rem;
 }
 
-.intoText > div > p {
+.introText > div > p {
+    font-size: 1rem;
 }
 
 .text-box__content {
@@ -349,14 +351,27 @@ body h1 {
     background-color: darkgray;
 }
 
+.introText-element {
+    max-width: 100%;
+    width: 100%;
+    padding: 5rem;
+    margin: 10rem;
+}
 
-@media screen and (max-width: 880px) {
-    .background{
-        top: -45px;
-    }
+.introText-element > p {
+    font-size: 0.8rem;
+}
+
+.introText-element > h2 {
+    display: flex;
+    text-align: left;
 }
 
 @media screen and (max-width: 880px) {
+    .background {
+        top: -45px;
+    }
+
     .timeline {
         margin: 50px auto;
     }
@@ -394,9 +409,13 @@ body h1 {
         flex-direction: column;
         align-items: center;
     }
+
+    .introText > div {
+        margin: 1rem 1rem;
+    }
+
     .introText-element {
         max-width: 100%;
-        min-width: 90%;
         width: 100%;
         margin: 2rem;
     }
