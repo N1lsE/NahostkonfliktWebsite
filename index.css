@@ -432,7 +432,7 @@ body h1 {
     .jump-back-top-btn {
         position: sticky;
         left: 0.4rem;
-        top: calc(calc(100% - 3rem - 1rem));
+        top: calc(calc(100% - 3rem - 2.5rem));
         
     }
 
