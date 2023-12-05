@@ -3,11 +3,11 @@
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
+    font-size: 20px;
 }
 
 body {
     background-color: #2e364a;
-    font-size: 16px;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -368,6 +368,7 @@ body h1 {
 }
 
 @media screen and (max-width: 880px) {
+    * {font-size: 16px;}
     .background {
         top: -45px;
     }
