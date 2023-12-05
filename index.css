@@ -404,9 +404,6 @@ body h1 {
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
-  .tooltip:active .tooltiptext {
-    visibility: visible;
-  }
 @media screen and (max-width: 880px) {
     * {font-size: 16px;}
     .background {
