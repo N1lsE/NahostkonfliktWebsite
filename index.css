@@ -335,6 +335,7 @@ body h1 {
 
     aspect-ratio: 1/1;
     width: 3rem;
+    height: 3rem;
     border-radius: 100%;
 
     position: sticky;
