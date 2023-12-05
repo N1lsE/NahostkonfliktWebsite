@@ -386,6 +386,11 @@ body h1 {
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .tooltip .tooltiptext > image {
+        width: 10%;
   }
   
   /* Show the tooltip text when you mouse over the tooltip container */
