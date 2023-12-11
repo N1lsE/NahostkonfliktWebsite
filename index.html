@@ -6,8 +6,6 @@
 </head>
 
 <body>
-
-    
     <div class="background">
         <img src="assets/background-small.JPG" alt="" class="image-blur-load">
         <img src="assets/IMG_0288.JPG" alt="" class="background-img">
@@ -24,9 +22,7 @@
         font-size: 3.8rem;
     ">^</button>
 
-    
-
-    <div style="height: 600px;"></div>
+    <div id="placeholder"></div>
 
     <div class="arrow-down">
         <div class="left"></div>
@@ -48,15 +44,17 @@
         <div class="introText-element">
             <h2>Beginn des ersten Weltkriegs</h2>
             <p>
-                Nach Bildung der <a href="https://de.wikipedia.org/wiki/Mittelm%C3%A4chte" class="tooltip">Mittelmächten<span class="tooltiptext">Deutschland, Österreich-Ungarn, Osmanisches Reich</span></a> und der <a href="" class="tooltip">Triple-Entente<span class="tooltiptext">Großbritannien, Frankreich, Russland</span></a> rief der osmanische Kalif, Sultan Hussein von Mekka, 1914 zum Dschihad gegen die Entente auf. Daraufhin suchte London eine arabische muslimische Persönlichkeit um dem Dschihad die Gefolgschaft zu entziehen.<br>Hussein von Mekka, welcher aus einer Prophetenfamilie kam, nahm den britischen Vorschlag bereitwillig an. Er wollte nicht nur Kalif sein, sondern auch der Führer eines arabischen Einheitstaates.
+                Nach Bildung der <a href="https://de.wikipedia.org/wiki/Mittelm%C3%A4chte" class="tooltip">Mittelmächten<span class="tooltiptext list">Zusammenschluss von<br>- Deutschland<br>- Österreich-Ungarn<br>- Osmanisches Reich</span></a> und der <a href="https://de.wikipedia.org/wiki/Triple_Entente" class="tooltip">Triple-Entente<span class="tooltiptext list">Zusammenschluss von<br>- Großbritannien<br>- Frankreich<br>- Russland
+                    
+                </span></a> rief der osmanische Kalif, Sultan Hussein von Mekka, 1914 zum Dschihad gegen die Entente auf. Daraufhin suchte London eine arabische muslimische Persönlichkeit um dem Dschihad die Gefolgschaft zu entziehen.<br>Hussein von Mekka, welcher aus einer Prophetenfamilie kam, nahm den britischen Vorschlag bereitwillig an. Er wollte nicht nur Kalif sein, sondern auch der Führer eines arabischen Einheitstaates.
             </p>
         </div>
 
         <div class="introText-element">
-            <h2>1915 - 10.1918</h2>
+            <h2>1915 - Oktober.1918</h2>
             <div>
                 <p>
-                    Nach mehrfacher Kontaktaufnahme stellte Henry Mc Mahons, dem Sherifen Hussein von Mekka, Abgesandte wie Thomas Edward Lawrence um die Araber zum Aufstand gegen die Osmanen zu bewegen.<br><br>Juni 1916 brach dieser Aufstand aus.<br>Als die Araber siegten, haben die Britische Regierung das Versprechen nicht eingehalten den Arabern einen unabhängigen Staat zu geben. Der Grund dafür war, dass das Gebiet zwischen den Briten und den Franzosen aufgeteilt.
+                    Nach mehrfacher Kontaktaufnahme stellte Henry Mc Mahons, dem Sherifen <a href="https://de.wikipedia.org/wiki/Hussein_ibn_Ali_(Hedschas)" class="tooltip">Hussein von Mekka<span class="tooltiptext">Hussein ibn Ali<br>- 1908 bis 1916 Emir des Hedschas und Großscherif von Mekka<br>- 1916 bis 1924 König des Hedschas<img src="/assets//images/Sharif_Husayn.jpg" alt=""></span></a>, Abgesandte wie Thomas Edward Lawrence um die Araber zum Aufstand gegen die Osmanen zu bewegen.<br><br>Juni 1916 brach dieser Aufstand aus.<br>Als die Araber siegten, haben die Britische Regierung das Versprechen nicht eingehalten den Arabern einen unabhängigen Staat zu geben. Der Grund dafür war, dass das Gebiet zwischen den Briten und den Franzosen aufgeteilt.
                 </p>
                 <img src="/assets//images/Hussain-von-Mekka.jpg" alt="" title="Hussain von Mekka">
             </div>
@@ -85,7 +83,7 @@
                 <h2 class="text-box__headding">Die Gründung des Israelischen Staates</h2>
                 <small class="text-box__date">14.Mai 1948</small>
                 <p class="text-box__content">   
-                Bis 1948 gibt es keinen Staat Israel. Juden und Araber lebten nebeneinander in Palästina, welches seit 1920 Kolonialgebiet von Großbritannien ist. 1947 beschließt die UN-Vollversammlung die Teilung Palästinas in einen jüdischen und einen arabischen Staat. Am 14. Mai 1948 verliest David Ben-Gurion in Tel Aviv die Unabhängigkeitserklärung(siehe Bild)des Staates Israel, der 56 Prozent des palästinensischen Territoriums umfasst.</p>
+                Bis 1948 gibt es keinen Staat Israel. Juden und Araber lebten nebeneinander in Palästina, welches seit 1920 Kolonialgebiet von Großbritannien ist. 1947 beschließt die UN-Vollversammlung die Teilung Palästinas in einen jüdischen und einen arabischen Staat. Am 14. Mai 1948 verliest David Ben-Gurion in Tel Aviv die Unabhängigkeitserklärung des Staates Israel, der 56 Prozent des palästinensischen Territoriums umfasst.</p>
                 <span class="left-container__arrow"></span>
                 <div class="blur-div" style="background-image: url(assets/images/resized/image.png);">
                     <img class="container-content-img" src="assets/images/image.png" alt="" loading="lazy">
@@ -605,6 +603,7 @@
 
         // Background blur
         const backgroundImageElement = document.querySelector(".background-img");
+        const backgroundImageElement2 = document.querySelector(".image-blur-load");
         const arrowDownElement = document.querySelector(".arrow-down");
         const arrowDownLeft = document.querySelector(".left");
         const arrowDownRight = document.querySelector(".right");
@@ -620,13 +619,16 @@
         var imagefilter = "saturate(20%) ";
         var deadZoneInPX = 200;
         if (pageYOffset > maxScrolDistance-1) {
-            backgroundImageElement.style.filter = imagefilter + `blur(80px)`;
+            backgroundImageElement.style.filter = imagefilter + `blur(80px) brightness(40%)`;
+            backgroundImageElement2.style.filter = imagefilter + `blur(80px) brightness(40%)`;
         }
         else if (pageYOffset < 1) {
-            backgroundImageElement.style.filter = imagefilter + `blur(0px)`;
+            backgroundImageElement.style.filter = imagefilter + `blur(0px) brightness(100%)`;
+            backgroundImageElement2.style.filter = imagefilter + `blur(0px) brightness(100%)`;
         }
         else {
-            backgroundImageElement.style.filter = imagefilter + `blur(${Math.floor(maxBlurInPx - (maxBlurInPx-((pageYOffset-deadZoneInPX)/maxScrolDistance*maxBlurInPx)))}px)`;
+            backgroundImageElement.style.filter = imagefilter + `blur(${Math.floor(maxBlurInPx - (maxBlurInPx-((pageYOffset-deadZoneInPX)/maxScrolDistance*maxBlurInPx)))}px) brightness(${Math.floor((100 - (pageYOffset-deadZoneInPX)/maxScrolDistance*60))}%)`;
+            backgroundImageElement2.style.filter = imagefilter + `blur(${Math.floor(maxBlurInPx - (maxBlurInPx-((pageYOffset-deadZoneInPX)/maxScrolDistance*maxBlurInPx)))}px) brightness(${Math.floor((100 - (pageYOffset-deadZoneInPX)/maxScrolDistance*60))}%)`;
         }
 
         if (pageYOffset < 150) {
@@ -688,6 +690,17 @@
         
 
     });
+    </script>
+
+<!-- placeholder script -->
+    <script>
+        const placeholder = document.getElementById("placeholder");
+        function SetPlaceholderHeight() {
+            var viewportHeight = document.viewportHeight;
+            placeholder.style.height = `${innerHeight*0.7-100}px`
+        }
+
+        SetPlaceholderHeight()
     </script>
       
       <!-- Jump to Top Button -->
