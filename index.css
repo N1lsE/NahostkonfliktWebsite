@@ -356,10 +356,24 @@ body h1 {
     width: 100%;
     padding: 5rem;
     margin: 10rem;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.introText-element > p {
-    font-size: 0.8rem;
+.introText-element > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.introText-element > div > img {
+    margin: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.introText-element > div > p {
+    font-size: 1rem;
 }
 
 .introText-element > h2 {
@@ -373,6 +387,7 @@ body h1 {
     text-decoration: underline;
     color: #352bc3;
     font-weight: 500;
+    text-align: justify;
 }
 
 .tooltip:hover {
@@ -382,6 +397,7 @@ body h1 {
 /* Tooltip text */
   .tooltip .tooltiptext {
     max-width: 250px;
+    min-width: 250px;
     visibility: hidden;
     background-color: #4f4f4f;
     color: #fff;
@@ -404,6 +420,12 @@ body h1 {
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+
+.introText-element .tooltip {
+    color: #ddddff;
+}
+
+
 @media screen and (max-width: 880px) {
     * {font-size: 16px;}
     .background {
@@ -470,7 +492,7 @@ body h1 {
     .jump-back-top-btn {
         position: sticky;
         left: 0.4rem;
-        top: calc(calc(100% - 3rem - 6rem));
+        top: calc(calc(100% - 3rem - 2rem));
         
     }
 
